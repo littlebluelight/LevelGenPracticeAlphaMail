@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 
     //This says hey a rigid body is gonna be on the player
     private Rigidbody2D rbPlayer1;
+    private SpriteRenderer mySpriteRenderer;
 
     public KeyCode left;
     public KeyCode right;
@@ -26,11 +27,19 @@ public class PlayerController : MonoBehaviour {
     public Transform groundCheckPoint;
     public LayerMask whatisGround;
 
+    public float camOffsety;
+    private GameObject cam;
+
+    private GameObject camwithChild;
+
+
     // Use this for initialization
     void Start () {
         //gets the rigid body on player and attaches to variable
         rbPlayer1 = GetComponent<Rigidbody2D>();
-        anima = GetComponent < Animator >();
+        anima = GetComponent<Animator>();
+
+        mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -69,15 +78,21 @@ public class PlayerController : MonoBehaviour {
 
         //This just flips animations/everything when facing left
         if(rbPlayer1.velocity.x<0){//if going left
-            transform.localScale = new Vector3(-1, 1, 1);//make face left
+            mySpriteRenderer.flipX = true;
         }
         else if(rbPlayer1.velocity.x > 0)
         {//if going right
-            transform.localScale = new Vector3(1, 1, 1);//make face left
+            mySpriteRenderer.flipX = false;
         }
 
         anima.SetFloat("Speed", Mathf.Abs(rbPlayer1.velocity.x));
         anima.SetBool("Grounded", isGrounded);
 
+        //this makes main camera follow player (cant be parented because of the above flip for sprite)
+
+       // cam = GameObject.Find ("Main Camera");
+       // cam.transform.position = new Vector2(rbPlayer1.position.x, rbPlayer1.position.y+camOffsety);
+
+     
     }
 }

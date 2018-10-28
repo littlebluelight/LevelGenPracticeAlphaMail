@@ -18,6 +18,9 @@ public class PlatformDestroyer : MonoBehaviour {
 
             //Destroy(gameObject);
             gameObject.SetActive(false);
+            //setting to false and reactivating is involved in object pooling which reduces lag
+
+            Debug.Log("42");
         }
 		
 	}
