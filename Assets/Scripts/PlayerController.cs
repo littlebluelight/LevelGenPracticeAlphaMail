@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 
     public float camOffsety;
     private GameObject cam;
+    private GameObject degen;
 
     private GameObject camwithChild;
 
@@ -90,9 +91,12 @@ public class PlayerController : MonoBehaviour {
 
         //this makes main camera follow player (cant be parented because of the above flip for sprite)
 
-       // cam = GameObject.Find ("Main Camera");
-       // cam.transform.position = new Vector2(rbPlayer1.position.x, rbPlayer1.position.y+camOffsety);
+        cam = GameObject.Find ("Confusion");
+        cam.transform.position = new Vector3(rbPlayer1.position.x, rbPlayer1.position.y+camOffsety,-10);
+        /*
+        degen = GameObject.Find("PlatformDegenerationPoint");
+        degen.transform.position = new Vector3(cam.transform.position.x-50, cam.transform.position.y + camOffsety, -10);
+*/
 
-     
     }
 }

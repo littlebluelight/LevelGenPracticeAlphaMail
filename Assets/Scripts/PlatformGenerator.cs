@@ -30,13 +30,15 @@ public class PlatformGenerator : MonoBehaviour {
 
             //here we are calling pooled obj from the object pooler script (its public)
             platformWidths[i] = theObjectPools[i].pooledObj.GetComponent<BoxCollider2D>().size.x;
+            //platformWidths[i] = theObjectPools[i].pooledObj.GetComponent<BoxCollider2D>().size.x;
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (transform.position.x < generationPoint.position.x){
             distanceBetweenPlats = Random.Range(distanceBetweenMin, distanceBetweenMax);
+            //when we have a good amount of the platforms to select from, can implement weights instead of this
             platformSelector = Random.Range(0, theObjectPools.Length);
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector])/2 + distanceBetweenPlats, transform.position.y, transform.position.z);
 
