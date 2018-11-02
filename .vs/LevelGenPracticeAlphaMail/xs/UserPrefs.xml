@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlatformGenerator.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="100" Column="9" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="100" Column="1" />
       <File FileName="Assets/Scripts/PlatformDestroyer.cs" Line="27" Column="2" />
-      <File FileName="Assets/Scripts/PlatformGenerator.cs" Line="37" Column="36" />
+      <File FileName="Assets/Scripts/PlatformGenerator.cs" Line="32" Column="1" />
       <File FileName="Assets/Scripts/ObjectPooler.cs" Line="23" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
