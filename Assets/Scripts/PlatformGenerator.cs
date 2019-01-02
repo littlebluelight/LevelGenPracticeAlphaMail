@@ -30,7 +30,7 @@ public class PlatformGenerator : MonoBehaviour {
 
             //here we are calling pooled obj from the object pooler script (its public)
             platformWidths[i] = theObjectPools[i].pooledObj.GetComponent<BoxCollider2D>().size.x;
-            //platformWidths[i] = theObjectPools[i].pooledObj.GetComponent<BoxCollider2D>().size.x;
+
         }
     }
 	
